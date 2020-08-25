@@ -40,11 +40,11 @@ starting_menu_text =[
 time = 120
 
 background = [
-    gamebox.from_image(400, 300, 'light_blue.png'), # first level background: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vectorstock.com%2Froyalty-free-vector%2Flight-blue-abstract-gradient-background-blurred-vector-20239419&psig=AOvVaw07H8FsAIDxekJBG0bfZhId&ust=1587791712148000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCNjB-ZmngOkCFQAAAAAdAAAAABAH
-    gamebox.from_image(400, 400, 'light_orange.png'), # second level background: https://wallpaperaccess.com/full/1092637.jpg
-    gamebox.from_image(400, 200, 'cave.png'), # third level background: https://media.indiedb.com/images/games/1/20/19885/Cave_Stage_Background3.png
-    gamebox.from_image(400, 500, 'light_pink.png'), # fourth level background: https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2f5cf225-3fed-42e2-819a-6b96622e434f/dc69yt3-37e18500-94ca-46cb-8f83-5510325bf72a.png/v1/fill/w_648,h_1232,q_70,strp/light_pink_gradient_background_by_glitchyxenon_dc69yt3-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTkwMCIsInBhdGgiOiJcL2ZcLzJmNWNmMjI1LTNmZWQtNDJlMi04MTlhLTZiOTY2MjJlNDM0ZlwvZGM2OXl0My0zN2UxODUwMC05NGNhLTQ2Y2ItOGY4My01NTEwMzI1YmY3MmEucG5nIiwid2lkdGgiOiI8PTEwMDAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.U6FY4Thht8bIraq0nA0QGGQ0SfQyKpdsGYdP-fWFWV0
-    gamebox.from_image(400, 300, 'dark.png') # fifth level background: https://wallpapercave.com/wp/wp3006044.png
+    gamebox.from_color(400,400, 'lightskyblue', 800, 600),
+    gamebox.from_color(400,400, '#ffb347', 800, 600),
+    gamebox.from_color(400,400, 'royalblue', 800, 800),
+    gamebox.from_color(400, 400, '#ffccff', 800, 800),
+    gamebox.from_color(400, 400, '#101046', 800, 800)
 
 ]
 background[0].scale_by(5)
@@ -126,81 +126,81 @@ level_5_walls = [
     gamebox.from_color(800, 0, 'black', 1000, 600),
     gamebox.from_color(400, 0, 'black', 1000, 400)
 ]
-# player sprite: https://66.media.tumblr.com/8538d3b351c74df38b24da797ba37d06/tumblr_mwvmdrH3Nm1r3ykgdo1_500.png
+# player sprite SOURCE: https://publicdomainvectors.org/en/free-clipart/Game-character/46006.html
 player_sprite = [
-    gamebox.from_image(320, 550, 'player_sprite.png'), # level 1 player location
-    gamebox.from_image(0, 420, 'player_sprite.png'), # level 2 player location
-    gamebox.from_image(10, 75, 'player_sprite.png'), # level 3 player location
-    gamebox.from_image(10, 300, 'player_sprite.png'), # level 4 player location
-    gamebox.from_image(20, 350, 'player_sprite.png') # level 5 player location
+    gamebox.from_image(320, 550, 'pixel_character-removebg-preview.png'), # level 1 player location
+    gamebox.from_image(0, 420, 'pixel_character-removebg-preview.png'), # level 2 player location
+    gamebox.from_image(10, 75, 'pixel_character-removebg-preview.png'), # level 3 player location
+    gamebox.from_image(10, 300, 'pixel_character-removebg-preview.png'), # level 4 player location
+    gamebox.from_image(20, 350, 'pixel_character-removebg-preview.png') # level 5 player location
 ]
 for each in player_sprite:
-    each.scale_by(0.1)
+    each.scale_by(0.7)
 
-# enemy sprite: https://66.media.tumblr.com/tumblr_md42sb9k441r3ykgdo1_500.png
+# enemy sprite SOURCE: https://publicdomainvectors.org/en/free-clipart/Cherry-Bomb-enemy-vector-image/22153.html
 enemy_sprite1 = [
-    gamebox.from_image(320,200, 'enemy_sprite.png'), # first enemy sprite in level 1
-    gamebox.from_image(320,300, 'enemy_sprite.png'), # second enemy sprite in level 1
-    gamebox.from_image(320,400, 'enemy_sprite.png'), # third enemy sprite in level 1
+    gamebox.from_image(320,200, 'enemy_sprite-removebg-preview.png'), # first enemy sprite in level 1
+    gamebox.from_image(320,300, 'enemy_sprite-removebg-preview.png'), # second enemy sprite in level 1
+    gamebox.from_image(320,400, 'enemy_sprite-removebg-preview.png'), # third enemy sprite in level 1
 ]
 for each in enemy_sprite1:
-    each.scale_by(0.1)
+    each.scale_by(0.07)
 for each in enemy_sprite1:
     enemy_sprite1[0].xspeed = 5
     enemy_sprite1[1].xspeed = -8
     enemy_sprite1[2].xspeed = 3
 enemy_sprite2 =[
-    gamebox.from_image(400,420, 'enemy_sprite.png'),
-    gamebox.from_image(400,225, 'enemy_sprite.png')
+    gamebox.from_image(400,420, 'enemy_sprite-removebg-preview.png'),
+    gamebox.from_image(400,225, 'enemy_sprite-removebg-preview.png')
 ]
 for each in enemy_sprite2:
-    each.scale_by(0.1)
+    each.scale_by(0.07)
 for each in enemy_sprite2:
     enemy_sprite2[0].xspeed = 4
     enemy_sprite2[1].xspeed = -4
 enemy_sprite3 =[
-    gamebox.from_image(400, 10, 'enemy_sprite.png')
+    gamebox.from_image(400, 10, 'enemy_sprite-removebg-preview.png')
 ]
 for each in enemy_sprite3:
-    each.scale_by(0.1)
+    each.scale_by(0.07)
 for each in enemy_sprite3:
     each.yspeed = 10
 enemy_sprite4 =[
-    gamebox.from_image(200,580,'enemy_sprite.png'),
-    gamebox.from_image(358, 20, 'enemy_sprite.png')
+    gamebox.from_image(200,580,'enemy_sprite-removebg-preview.png'),
+    gamebox.from_image(358, 20, 'enemy_sprite-removebg-preview.png')
 ]
 for each in enemy_sprite4:
-    each.scale_by(0.1)
+    each.scale_by(0.07)
 enemy_sprite4[0].yspeed = -4
 enemy_sprite4[1].yspeed = 4
 
-# last enemy sprite: https://static1.squarespace.com/static/564cac40e4b0fa2130e45e5e/t/5de7f23d64b7db055cd699ae/1575481921508/f49489f3-5124-4cf4-b4d4-50ec4af7cf0a.jpg?format=1500w
+# enemy_sprite5 SOURCE: https://pixabay.com/vectors/ghost-fear-scare-halloween-horror-3748591/
 enemy_sprite5 = [
-    gamebox.from_image(250, 250, 'last_enemy.png')
+    gamebox.from_image(250, 250, 'ghost-3748591_640.png')
 ]
 for each in enemy_sprite5:
-    each.scale_by(0.1)
-# coin sprite: https://w0.pngwave.com/png/1012/478/pixel-art-drawing-graphics-2d-coin-sprite-png-clip-art.png
+    each.scale_by(0.05)
+# coin sprite SOURCE: https://freesvg.org/spinning-coin-vector-clip-art
 coins1 =[
-    gamebox.from_image(random.randrange(220,420),350, 'coin_sprite.png') # first coin in level 1
+    gamebox.from_image(random.randrange(220,420),350, 'shiny-coin3-removebg-preview.png') # first coin in level 1
 
 ]
 for each in coins1:
     each.scale_by(0.05)
 coins2 = [
-    gamebox.from_image(random.randrange(300,500), 240, 'coin_sprite.png'), # first coin in level 2
-    gamebox.from_image(random.randrange(300,500), 430, 'coin_sprite.png') # second coin in level 2
+    gamebox.from_image(random.randrange(300,500), 240, 'shiny-coin3-removebg-preview.png'), # first coin in level 2
+    gamebox.from_image(random.randrange(300,500), 430, 'shiny-coin3-removebg-preview.png') # second coin in level 2
 ]
 for each in coins2:
     each.scale_by(0.05)
 coins3 =[
-    gamebox.from_image(400, 475, 'coin_sprite.png') # first coin in level 3
+    gamebox.from_image(400, 475, 'shiny-coin3-removebg-preview.png') # first coin in level 3
 ]
 for each in coins3:
     each.scale_by(0.05)
 coins4 = [
-    gamebox.from_image(200,420, 'coin_sprite.png'), # first coin in level 4
-    gamebox.from_image(358, 200, 'coin_sprite.png') # second coin in level 4
+    gamebox.from_image(200,420, 'shiny-coin3-removebg-preview.png'), # first coin in level 4
+    gamebox.from_image(358, 200, 'shiny-coin3-removebg-preview.png') # second coin in level 4
 ]
 for each in coins4:
     each.scale_by(0.05)
@@ -246,7 +246,7 @@ def tick(keys):
                 if enemy_sprite1[2].touches(each):
                     enemy_sprite1[2].xspeed = -enemy_sprite1[2].xspeed
             for each in enemy_sprite1:
-                if player_sprite[0].touches(each, padding = -17):
+                if player_sprite[0].touches(each, padding = -14):
                     camera.draw(gamebox.from_text(400, 300, 'You hit an ENEMY, press SPACE to reset', 30, 'white'))
                     gamebox.pause()
                     keys.clear()
@@ -266,7 +266,7 @@ def tick(keys):
             if pygame.K_LEFT in keys:
                 player_sprite[0].x -= 3
             for each in level_1_walls:
-                if player_sprite[0].touches(each, padding = -10):
+                if player_sprite[0].touches(each, padding = -12):
                     camera.draw(gamebox.from_text(400, 300, 'You hit a WALL, press SPACE to reset', 30, 'white'))
                     gamebox. pause()
                     keys.clear()
@@ -293,7 +293,7 @@ def tick(keys):
             if enemy_sprite2[0].x == camera.left:
                 enemy_sprite2[0].xspeed = -enemy_sprite2[0].xspeed
             for each in enemy_sprite2:
-                if player_sprite[1].touches(each, padding = -17):
+                if player_sprite[1].touches(each, padding = -14):
                     camera.draw(gamebox.from_text(400, 300, 'You hit an ENEMY, press SPACE to reset', 30, 'white'))
                     gamebox.pause()
                     keys.clear()
@@ -313,7 +313,7 @@ def tick(keys):
             if pygame.K_LEFT in keys:
                 player_sprite[1].x -= 3
             for each in level_2_walls:
-                if player_sprite[1].touches(each, padding = -10):
+                if player_sprite[1].touches(each, padding = -12):
                     camera.draw(gamebox.from_text(400, 300, 'You hit a WALL, press SPACE to reset', 30, 'white'))
                     gamebox.pause()
                     keys.clear()
@@ -340,7 +340,7 @@ def tick(keys):
                 if enemy_sprite3[0].touches(each):
                     enemy_sprite3[0].yspeed = -enemy_sprite3[0].yspeed
             for each in enemy_sprite3:
-                if player_sprite[2].touches(each, padding = -17):
+                if player_sprite[2].touches(each, padding = -14):
                     camera.draw(gamebox.from_text(400, 300, 'You hit an ENEMY, press SPACE to reset', 30, 'white'))
                     gamebox.pause()
                     keys.clear()
@@ -362,7 +362,7 @@ def tick(keys):
             if pygame.K_LEFT in keys:
                 player_sprite[2].x -= 3
             for each in level_3_walls:
-                if player_sprite[2].touches(each, padding = -10):
+                if player_sprite[2].touches(each, padding = -12):
                     camera.draw(gamebox.from_text(400, 300, 'You hit a WALL, press SPACE to reset', 30, 'white'))
                     gamebox.pause()
                     keys.clear()
@@ -393,7 +393,7 @@ def tick(keys):
                 if enemy_sprite4[1].touches(each):
                     enemy_sprite4[1].yspeed = -enemy_sprite4[1].yspeed
             for each in enemy_sprite4:
-                if player_sprite[3].touches(each, padding = -17):
+                if player_sprite[3].touches(each, padding = -14):
                     camera.draw(gamebox.from_text(400, 300, 'You hit an ENEMY, press SPACE to reset', 30, 'white'))
                     gamebox.pause()
                     keys.clear()
@@ -413,7 +413,7 @@ def tick(keys):
             if pygame.K_LEFT in keys:
                 player_sprite[3].x -= 3
             for each in level_4_walls:
-                if player_sprite[3].touches(each, padding = -10):
+                if player_sprite[3].touches(each, padding = -12):
                     camera.draw(gamebox.from_text(400, 300, 'You hit a WALL, press SPACE to reset', 30, 'white'))
                     gamebox.pause()
                     keys.clear()
@@ -451,22 +451,21 @@ def tick(keys):
                 camera.draw(gamebox.from_text(500, 175, 'RUN.', 40, 'white'))
             if player_sprite[4].x > 740:
                 camera.draw(gamebox.from_text(400, 300, 'R U N', 250, 'red'))
-                enemy_sprite5[0].xspeed += 13
+                enemy_sprite5[0].xspeed += 12
                 enemy_sprite5[0].move_speed()
             if enemy_sprite5[0].touches(player_sprite[4]):
                 points += 100
-                # pop up image: https://i.ytimg.com/vi/HaxM_RzELm8/maxresdefault.jpg
-                camera.draw(gamebox.from_image(400,300, 'pop_up.png'))
+                # pop up image SOURCE: https://pixabay.com/vectors/ghost-fear-scare-halloween-horror-3748591/
+                camera.clear('black')
+                camera.draw(gamebox.from_image(400,300, 'ghost-3748591_640.png'))
                 camera.draw(gamebox.from_text(400, 300, 'You LOSE. Press SPACE', 90, 'red'))
                 gamebox.pause()
                 gamebox.timer_loop(60, restart)
             elif player_sprite[4].touches(level_endpoints[4]):
                 camera.clear('white')
                 gamebox.pause()
-                congrats = gamebox.from_image(400, 300, 'congrats.png')
-                congrats.scale_by(1.5)
-                camera.draw(congrats)
-                camera.draw(gamebox.from_text(400, 400, 'You beat the game!!!', 90, 'light blue', bold = True))
+                camera.draw(gamebox.from_text(400, 200, 'CONGRATS', 90, 'pink', bold = True))
+                camera.draw(gamebox.from_text(400, 300, 'You beat the game!!!', 90, 'light blue', bold = True))
         if time <= 0:
             camera.draw(gamebox.from_text(400, 300, 'TIMES UP! Press SPACE', 30, 'white'))
             points = 0
