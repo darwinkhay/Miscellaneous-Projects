@@ -1,0 +1,222 @@
+---
+title: "Final Project Data Visualization"
+author: "Darwin Khay"
+date: "10/24/2020"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+# Importing dataset and packages
+
+```{r}
+asmr <- read.csv("C:\\Users\\khayd\\Documents\\FALL 2020 Files\\STAT 1601\\Datasets\\ASMR_data2.csv")
+library(dplyr)
+library(ggplot2)
+library(RColorBrewer)
+library(ggwordcloud)
+
+```
+
+# Stacked bar graphs
+
+```{r}
+
+asmr3 <-asmr%>%
+  mutate(FlowNotWorried = 
+          ifelse(FlowNotWorried == 1, "(1)Feel extremely worried", 
+          ifelse(FlowNotWorried == 2, "(2)Feel moderately worried",
+          ifelse(FlowNotWorried == 3, "(3)Feel slightly worried",
+          ifelse(FlowNotWorried == 4, "(4)Feel almost no worry", 
+          ifelse(FlowNotWorried == 5,"(5)Feel no worry", NA))))), 
+         FlowInControl = 
+          ifelse(FlowInControl == 1, "(1)No control of feelings",
+          ifelse(FlowInControl == 2, "(2)Little control of feelings",
+          ifelse(FlowInControl == 3, "(3)Moderate control of feelings",
+          ifelse(FlowInControl == 4, "(4)Better control of feelings",
+          ifelse(FlowInControl ==5,"(5)Full control of feelings", NA))))))%>%
+  filter(!is.na(FlowNotWorried), !is.na(FlowInControl))
+
+ggplot(asmr3, aes(x=BDI_group, fill=FlowNotWorried))+
+  geom_bar(position = "fill")+
+  theme(axis.text.x = element_text(angle = 65, vjust = 0.5),plot.title = element_text(hjust = 0.5), axis.title.x = element_text(vjust = -1))+
+  labs(x = "BDI Group ", title = "Worrisomeness of Participants")
+
+
+ggplot(asmr3, aes(x=BDI_group, fill=FlowInControl))+
+  geom_bar(position = "fill")+
+  theme(axis.text.x = element_text(angle = 65, vjust = 0.5),plot.title = element_text(hjust = 0.5), axis.title.x = element_text(vjust = -1))+
+  labs(x = "BDI Group", title = "Level of control of participants")
+```
+
+# Histograms of The Mood of Participants
+
+```{r}
+
+ggplot(asmr, aes(x=Mood_Before_watch))+
+  geom_histogram(bins = sqrt(nrow(asmr)), fill="lightpink", color="white")+
+  labs(y = "Mood (0-100)", title = "Histogram for Mood Before Watching ASMR videos", x = "Before Mood")+
+  theme(plot.title = element_text(hjust = 0.5))
+
+ggplot(asmr, aes(x=Mood_During_Watch))+
+  geom_histogram(bins = sqrt(nrow(asmr)), fill="lightpink", color="white")+
+  labs(y = "Mood (0-100)", title = "Histogram for Mood While Watching ASMR videos", x = "During Mood")+
+  theme(plot.title = element_text(hjust = 0.5))
+
+
+ggplot(asmr, aes(x=Mood_After_watch))+
+  geom_histogram(bins = sqrt(nrow(asmr)), fill="lightpink", color="white")+
+  labs(y = "Mood (0-100)", title = "Histogram for Mood After Watching ASMR videos", x = "After Mood")+
+  theme(plot.title = element_text(hjust = 0.5))
+
+
+
+ggplot(asmr, aes(x=Mood_Daily))+
+  geom_histogram(bins = sqrt(nrow(asmr)), fill="lightpink", color="white")+
+  labs(y = "Mood (0-100)", title = "Histogram for General Mood", x = "General Mood")+
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+# Side-by-side boxplots of Mood of Participants grouped by BDI_group 
+
+```{r}
+ggplot(asmr, aes(x = BDI_group,y=Mood_Before_watch))+
+  geom_boxplot(fill="aquamarine")+
+  labs(y = "Mood (0-100)", title = "Boxplots for Mood Before Watching ASMR videos", x = "BDI group")+
+  theme(plot.title = element_text(hjust = 0.5))
+
+ggplot(asmr, aes(x = BDI_group,y=Mood_During_Watch))+
+  geom_boxplot(fill="aquamarine")+
+  labs(y = "Mood (0-100)", title = "Boxplots for Mood While Watching ASMR videos", x = "BDI group")+
+  theme(plot.title = element_text(hjust = 0.5))
+
+
+ggplot(asmr, aes(x = BDI_group,y=Mood_After_watch))+
+  geom_boxplot(fill="aquamarine")+
+  labs(y = "Mood (0-100)", title = "Boxplots for Mood After Watching ASMR videos", x = "BDI group")+
+  theme(plot.title = element_text(hjust = 0.5))
+
+ggplot(asmr, aes(x = BDI_group,y=Mood_Daily))+
+  geom_boxplot(fill="aquamarine")+
+  labs(y = "Mood (0-100)", title = "Boxplots for General Mood", x = "BDI group")+
+  theme(plot.title = element_text(hjust = 0.5))
+
+
+```
+
+
+# Scatterplots of BDI_TOTAL score and Mood of Participants
+
+```{r}
+ggplot(asmr, aes(x = BDI_TOTAL, y = Mood_Before_watch))+
+  geom_point()+
+  geom_smooth(method = "lm")+
+  labs(y = "Mood (0-100)", title = "Scatterplot for Mood Before Watching ASMR videos", x = "BDI Total Score")+
+  theme(plot.title = element_text(hjust = 0.5))
+
+
+
+
+ggplot(asmr, aes(x = BDI_TOTAL, y = Mood_During_Watch))+
+  geom_point()+
+  geom_smooth(method = "lm")+
+  labs(y = "Mood (0-100)", title = "Scatterplot for Mood While Watching ASMR videos", x = "BDI Total Score")+
+  theme(plot.title = element_text(hjust = 0.5))
+
+
+
+ggplot(asmr, aes(x = BDI_TOTAL, y = Mood_After_watch))+
+  geom_point()+
+  geom_smooth(method = "lm")+
+  labs(y = "Mood (0-100)", title = "Scatterplot for Mood After Watching ASMR videos", x = "BDI Total Score")+
+  theme(plot.title = element_text(hjust = 0.5))
+
+
+
+
+ggplot(asmr, aes(x = BDI_TOTAL, y = Mood_Daily))+
+  geom_point()+
+  geom_smooth(method = "lm")+
+  labs(y = "Mood (0-100)", title = "Scatterplot for General Mood of Participants", x = "BDI Total Score")+
+  theme(plot.title = element_text(hjust = 0.5))
+
+
+```
+
+
+
+# Side-by-side boxplots of three key categorical variables
+
+```{r}
+
+asmr3 <-asmr%>%
+  mutate(RelieveNegativeMood = 
+        ifelse(RelieveNegativeMood==1, "(1)Does not watch to relieve negative mood",
+        ifelse(RelieveNegativeMood==2, "(2)Watch to relieve negative mood minimally",
+        ifelse(RelieveNegativeMood==3, "(3)Watch to somewhat relieve negative mood",
+        ifelse(RelieveNegativeMood==4, "(4)Watch to mostly relieve negative mood",
+        ifelse(RelieveNegativeMood==5, "(5)Watch to fully relieve negative mood", NA))))),
+        DealWithAnxiety =
+        ifelse(DealWithAnxiety==1, "(1)Does not watch ASMR videos to deal with anxiety",
+        ifelse(DealWithAnxiety==2, "(2)Watch to minimally deal with anxiety",
+        ifelse(DealWithAnxiety==3, "(3)Somewhat watches to deal with anxiety",
+        ifelse(DealWithAnxiety==4, "(4)Mostly watches to deal with anxiety",
+        ifelse(DealWithAnxiety==5, "(5)Fully watches to deal with anxiety", NA))))),
+        DealWithStress =
+        ifelse(DealWithStress==1, "(1)Does not watch ASMR videos to deal with stress",
+        ifelse(DealWithStress==2, "(2)Watch to minimally deal with stress",
+        ifelse(DealWithStress==3, "(3)Somewhat watches to deal with stress",
+        ifelse(DealWithStress==4, "(4)Mostly watches to deal with stress",
+        ifelse(DealWithStress==5, "(5)Fully watches to deal with stress", NA))))),
+        WatchToDealWithDepression=
+        ifelse(WatchToDealWithDepression==1, "(1)Does not watch ASMR videos to deal with depression",
+        ifelse(WatchToDealWithDepression==2, "(2)Watch to minimally deal with depression",
+        ifelse(WatchToDealWithDepression==3, "(3)Somewhat watches to deal with depression",
+        ifelse(WatchToDealWithDepression==4, "(4)Mostly watches to deal with depression",
+        ifelse(WatchToDealWithDepression==5, "(5)Fully watches to deal with depression", NA))))),
+        HelpMeSleep =
+        ifelse(HelpMeSleep==1, "(1)Does not watch ASMR videos to help with sleep",
+        ifelse(HelpMeSleep==2, "(2)Watch to minimally help with sleep",
+        ifelse(HelpMeSleep==3, "(3)Somewhat watches to help with sleep",
+        ifelse(HelpMeSleep==4, "(4)Mostly watches to help with sleep",
+        ifelse(HelpMeSleep==5, "(5)Fully watches to help with sleep", NA))))))%>%
+  filter(!is.na(RelieveNegativeMood), !is.na(EnjoyASMRvideos), !is.na(WatchToRelax), !is.na(DealWithAnxiety),
+         !is.na(DealWithStress), !is.na(WatchToDealWithDepression), !is.na(HelpMeSleep))
+  
+  
+ggplot(asmr3, aes(x = BDI_group, y=BDI_TOTAL, fill = RelieveNegativeMood))+
+  geom_boxplot()+
+  theme(axis.text.x = element_text(angle = 20, vjust = 1),plot.title = element_text(hjust = 0.5), axis.title.x = element_text(vjust = 1))+
+  labs(x = "BDI Group", title = "Relief of Negative Mood of Participants", y = "BDI Total Score")
+
+ggplot(asmr3, aes(x = BDI_group, y=BDI_TOTAL, fill = DealWithAnxiety))+
+  geom_boxplot()+
+  theme(axis.text.x = element_text(angle = 20, vjust = 1),plot.title = element_text(hjust = 0.5), axis.title.x = element_text(vjust = 1))+
+  labs(x = "BDI Group", title = "Watch to Deal With Anxiety", y = "BDI Total Score")
+
+ggplot(asmr3, aes(x = BDI_group, y=BDI_TOTAL, fill = DealWithStress))+
+  geom_boxplot()+
+  theme(axis.text.x = element_text(angle = 20, vjust = 1),plot.title = element_text(hjust = 0.5), axis.title.x = element_text(vjust = 1))+
+  labs(x = "BDI Group", title = "Watch to Deal with Stress", y = "BDI Total Score")
+
+ggplot(asmr3, aes(x = BDI_group, y=BDI_TOTAL, fill = WatchToDealWithDepression))+
+  geom_boxplot()+
+  theme(axis.text.x = element_text(angle = 20, vjust = 1),plot.title = element_text(hjust = 0.5), axis.title.x = element_text(vjust = 1))+
+  labs(x = "BDI Group", title = "Watch to Deal with Depression", y = "BDI Total Score")
+
+
+
+
+
+```
+
+# Facet-wrapped Bar graph
+
+```{r}
+ggplot(asmr3, aes(x = HelpMeSleep, fill = EffectSleep))+
+  geom_bar(position="fill")+
+  facet_wrap(~BDI_group)+
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5),plot.title = element_text(hjust = 0.5), axis.title.x = element_text(vjust = -1))+
+  labs(x = "Watch ASMR videos to help sleep", title = "Sleep Effect on BDI groups")
+```
+

@@ -1,0 +1,297 @@
+---
+title: "Final Project Data Wrangling"
+author: "Darwin Khay"
+date: "9/29/2020"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+# Importing the dataset
+
+```{r}
+
+asmr_data <- read.csv("C:\\Users\\khayd\\Documents\\FALL 2020 Files\\STAT 1601\\Datasets\\ASMR_data.csv")
+```
+
+```{r}
+library(dplyr)
+
+```
+
+# Subsetting the data to include relevant variables
+ 
+```{r}
+#
+
+asmr_data1 <- asmr_data%>%
+  select(BDI.group, BDI_TOTAL, BAI_TOTAL,Ill_Elab, V_howmanyvideos, V_Time_Evening, V_Time_BeforeSleep, V_Time_SpareTime, D_Do_you_Experience_tingles,FlowWatching,FlowFeeling,FlowNoEffort,FlowInControl,FlowNotWorried,BeforeMood,During,After,X30mins,hour,X3hour,Day,Daily,EffectSleep,RelieveNegativeMood,EnjoyASMRvideos,EnjoyContentofASMRvideos,WatchToRelax,DealWithAnxiety,DealWithStress,HelpMeSleep,Depression)
+
+
+```
+
+
+# Renaming some column names
+
+```{r}
+
+asmr_data2<-asmr_data1%>%
+  rename(BDI_group = BDI.group,Illness_Type = Ill_Elab, Num_ASMRVideos = V_howmanyvideos, Watch_EveningTime = V_Time_Evening, Watch_BeforeSleep = V_Time_BeforeSleep, Watch_SpareTime = V_Time_SpareTime, Experienced_Tingles = D_Do_you_Experience_tingles, Mood_Before_watch = BeforeMood, Mood_During_Watch = During, Mood_After_watch = After, MoodAfter_30mins_watch = X30mins, MoodAfter_1hour_watch = hour, MoodAfter_3hours_watch = X3hour, MoodAfter_1Day_watch = Day, Mood_Daily = Daily, EnjoyContentofASMRvideos_notingles = EnjoyContentofASMRvideos, WatchToDealWithDepression = Depression, FlowFocusWatching = FlowWatching)
+
+glimpse(asmr_data2)
+```
+
+
+# Changing some columns into character vectors and changing values
+
+```{r}
+
+
+asmr_data3 <- asmr_data2%>%
+  mutate(BDI_group = as.character(BDI_group))%>%
+  mutate(BDI_group = ifelse(BDI_group == "1", "Little to no depression", ifelse(BDI_group == "2", "Mild depression", "Moderate or severe depression")))%>%
+  mutate(Illness_Type = ifelse(Illness_Type == "0", NA, Illness_Type))%>%
+  mutate(Watch_EveningTime = as.character(Watch_EveningTime), Watch_BeforeSleep = as.character(Watch_BeforeSleep), Watch_SpareTime = as.character(Watch_SpareTime))%>%
+  mutate(Watch_EveningTime = ifelse(Watch_EveningTime == "0", "No", "Yes"), Watch_BeforeSleep = ifelse(Watch_BeforeSleep == "0", "No", "Yes"), Watch_SpareTime = ifelse(Watch_SpareTime == "0", "No", "Yes"))%>%
+  mutate(Experienced_Tingles = as.character(Experienced_Tingles))%>%
+  mutate(Experienced_Tingles = ifelse(Experienced_Tingles == "1", "Yes", "No"))%>%
+  mutate(EffectSleep = as.character(EffectSleep))%>%
+  mutate(EffectSleep = ifelse(EffectSleep == "1" | EffectSleep == "3", "Yes", "No"))
+
+glimpse(asmr_data3)
+
+```
+
+# Summary measures of key numeric variables
+
+```{r}
+
+
+BDI_mean_table<-asmr_data3%>%
+  group_by(BDI_group)%>%
+  summarize(BDI_mean_byBDIgroup = mean(BDI_TOTAL, na.rm=T), BAI_mean_byBDIgroup = mean(BAI_TOTAL, na.rm=T))
+BDI_mean_table
+
+BDI_standarddev_table <- asmr_data3%>%
+  group_by(BDI_group)%>%
+  summarize(BDI_sd_byBDIgroup = sd(BDI_TOTAL, na.rm=T), BAI_sd_byBDIgroup = sd(BAI_TOTAL, na.rm=T))
+BDI_standarddev_table
+
+
+
+NumVids_mean_table<-asmr_data3%>%
+  group_by(BDI_group)%>%
+  summarize(NumVids_mean_byBDIgroup = mean(Num_ASMRVideos, na.rm=T))
+NumVids_mean_table
+
+NumVids_sd_table<-asmr_data3%>%
+  group_by(BDI_group)%>%
+  summarize(NumVids_sd_byBDIgroup = sd(Num_ASMRVideos, na.rm=T))
+NumVids_sd_table
+
+
+
+MoodBeforeWatch_mean_table <- asmr_data3%>%
+  group_by(BDI_group)%>%
+  summarize(MoodBeforeWatch_mean_byBDIgroup = mean(Mood_Before_watch, na.rm=T))
+MoodBeforeWatch_mean_table
+
+MoodBeforeWatch_sd_table <- asmr_data3%>%
+  group_by(BDI_group)%>%
+  summarize(MoodBeforeWatch_sd_byBDIgroup = sd(Mood_Before_watch, na.rm=T))
+MoodBeforeWatch_sd_table
+
+
+
+MoodAfterWatch_mean_table <- asmr_data3%>%
+  group_by(BDI_group)%>%
+  summarize(MoodAfterWatch_mean_byBDIgroup = mean(Mood_After_watch, na.rm=T))
+MoodAfterWatch_mean_table
+
+MoodAfterWatch_sd_table <- asmr_data3%>%
+  group_by(BDI_group)%>%
+  summarize(MoodAfterWatch_sd_byBDIgroup = sd(Mood_Before_watch, na.rm=T))
+MoodAfterWatch_sd_table
+
+
+
+MoodAfter30minsWatch_mean_table <- asmr_data3%>%
+  group_by(BDI_group)%>%
+  summarize(MoodAfter30minWatch_mean_byBDIgroup = mean(MoodAfter_30mins_watch, na.rm=T))
+MoodAfter30minsWatch_mean_table
+
+
+MoodAfter30minsWatch_sd_table <- asmr_data3%>%
+  group_by(BDI_group)%>%
+  summarize(MoodAfter30minWatch_sd_byBDIgroup = sd(MoodAfter_30mins_watch, na.rm=T))
+MoodAfter30minsWatch_sd_table
+
+
+
+MoodAfter1hourWatch_mean_table <- asmr_data3%>%
+  group_by(BDI_group)%>%
+  summarize(MoodAfter1hourWatch_mean_byBDIgroup = mean(MoodAfter_1hour_watch, na.rm=T))
+MoodAfter1hourWatch_mean_table
+
+MoodAfter1hourWatch_sd_table <- asmr_data3%>%
+  group_by(BDI_group)%>%
+  summarize(MoodAfter1hourWatch_sd_byBDIgroup = sd(MoodAfter_1hour_watch, na.rm=T))
+MoodAfter1hourWatch_sd_table
+
+
+
+MoodAfter3hoursWatch_mean_table <- asmr_data3%>%
+  group_by(BDI_group)%>%
+  summarize(MoodAfter3hoursWatch_mean_byBDIgroup = mean(MoodAfter_3hours_watch, na.rm=T))
+MoodAfter3hoursWatch_mean_table
+
+MoodAfter3hoursWatch_sd_table <- asmr_data3%>%
+  group_by(BDI_group)%>%
+  summarize(MoodAfter3hoursWatch_sd_byBDIgroup = sd(MoodAfter_3hours_watch, na.rm=T))
+MoodAfter3hoursWatch_sd_table
+
+
+MoodAfter1DayWatch_mean_table <- asmr_data3%>%
+  group_by(BDI_group)%>%
+  summarize(MoodAfter1DayWatch_mean_byBDIgroup = mean(MoodAfter_1Day_watch, na.rm=T))
+MoodAfter1DayWatch_mean_table
+
+MoodAfter1DayWatch_sd_table <- asmr_data3%>%
+  group_by(BDI_group)%>%
+  summarize(MoodAfter1DayWatch_sd_byBDIgroup = sd(MoodAfter_1Day_watch, na.rm=T))
+MoodAfter1DayWatch_sd_table
+
+
+
+MoodDaily_mean_table<-asmr_data3%>%
+  group_by(BDI_group)%>%
+  summarize(MoodDaily_mean_byBDIgroup = mean(Mood_Daily, na.rm=T))
+MoodDaily_mean_table
+
+MoodDaily_sd_table<-asmr_data3%>%
+  group_by(BDI_group)%>%
+  summarize(MoodDaily_sd_byBDIgroup = sd(Mood_Daily, na.rm=T))
+MoodDaily_sd_table
+
+
+
+```
+
+
+# Summary measures of key categorical variables
+
+```{r}
+
+
+illness_type_table<-asmr_data3%>%
+  select(Illness_Type)%>%
+  table()
+
+illness_type_table2<-illness_type_table%>%
+  data.frame(illness_type_table)%>%
+  select(1,Freq)%>%
+  rename(Illness_Type = 1)
+illness_type_table3<-illness_type_table2[order(-illness_type_table2$Freq),]
+head(illness_type_table3)
+
+twoway_bdigroup_eveningtime <- asmr_data3%>%
+  select(BDI_group, Watch_EveningTime)%>%
+  table()
+twoway_bdigroup_eveningtime
+
+
+twoway_bdigroup_beforesleep <- asmr_data3%>%
+  select(BDI_group, Watch_BeforeSleep)%>%
+  table()
+twoway_bdigroup_beforesleep
+
+
+twoway_bdigroup_sparetime <- asmr_data3%>%
+  select(BDI_group, Watch_SpareTime)%>%
+  table()
+twoway_bdigroup_sparetime
+
+experiencedtingles_frequency <- asmr_data3%>%
+  select(Experienced_Tingles)%>%
+  table()
+experiencedtingles_frequency
+
+
+twoway_bdigroup_flowfocuswatching<-asmr_data3%>%
+  select(BDI_group, FlowFocusWatching)%>%
+  table()
+twoway_bdigroup_flowfocuswatching
+
+
+twoway_bdigroup_flowfeeling<-asmr_data3%>%
+  select(BDI_group, FlowFeeling)%>%
+  table()
+twoway_bdigroup_flowfeeling
+
+twoway_bdigroup_flownoeffort<-asmr_data3%>%
+  select(BDI_group, FlowNoEffort)%>%
+  table()
+twoway_bdigroup_flownoeffort
+
+
+twoway_bdigroup_flowincontrol<-asmr_data3%>%
+  select(BDI_group, FlowInControl)%>%
+  table()
+twoway_bdigroup_flowincontrol
+
+
+twoway_bdigroup_flownotworried<-asmr_data3%>%
+  select(BDI_group, FlowNotWorried)%>%
+  table()
+twoway_bdigroup_flownotworried
+
+twoway_bdigroup_effectsleep <- asmr_data3%>%
+  select(BDI_group, EffectSleep)%>%
+  table()
+twoway_bdigroup_effectsleep
+
+twoway_bdigroup_relievenegativemood <- asmr_data3%>%
+  select(BDI_group, RelieveNegativeMood)%>%
+  table()
+twoway_bdigroup_relievenegativemood
+
+
+twoway_bdigroup_enjoyasmrvids <- asmr_data3%>%
+  select(BDI_group, EnjoyASMRvideos)%>%
+  table()
+twoway_bdigroup_enjoyasmrvids
+
+twoway_bdigroup_enjoycontentasmrvids_notingles <- asmr_data3%>%
+  select(BDI_group, EnjoyContentofASMRvideos_notingles)%>%
+  table()
+twoway_bdigroup_enjoycontentasmrvids_notingles
+
+twoway_bdigroup_watchtorelax <- asmr_data3%>%
+  select(BDI_group, WatchToRelax)%>%
+  table()
+twoway_bdigroup_watchtorelax
+
+twoway_bdigroup_dealwithanxiety <- asmr_data3%>%
+  select(BDI_group, DealWithAnxiety)%>%
+  table()
+twoway_bdigroup_dealwithanxiety
+
+twoway_bdigroup_dealwithstress <- asmr_data3%>%
+  select(BDI_group, DealWithStress)%>%
+  table()
+twoway_bdigroup_dealwithstress
+
+twoway_bdigroup_helpmesleep <- asmr_data3%>%
+  select(BDI_group, HelpMeSleep)%>%
+  table()
+twoway_bdigroup_helpmesleep
+
+twoway_bdigroup_dealwithdepression <- asmr_data3%>%
+  select(BDI_group, WatchToDealWithDepression)%>%
+  table()
+twoway_bdigroup_dealwithdepression
+
+
+```
+
+

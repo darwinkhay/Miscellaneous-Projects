@@ -1,0 +1,33 @@
+---
+title: "One and Two Sample Inference"
+author: "Darwin Khay"
+date: "11/19/2020"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r}
+asmr <- read.csv("C:\\Users\\khayd\\Documents\\FALL 2020 Files\\STAT 1601\\Datasets\\ASMR_data2.csv")
+library(dplyr)
+```
+
+
+# Confidence Interval for Proportions (One Sample Inference)
+
+```{r}
+# First counting the data for how many participants said "Yes" to the EffectSleep variable
+asmr%>%
+  filter(EffectSleep == "Yes")%>%
+  summarize(EffectSleep_yes = n())
+
+
+prop.test(282, 475, conf.level = 0.95)
+```
+
+# Confidence Interval for Means(TWo Sample Inference of Paired Populations)
+```{r}
+t.test(asmr$Mood_Daily, asmr$Mood_After_watch, paired = T, conf.level = 0.95)
+```
+
+

@@ -1,0 +1,81 @@
+---
+title: "Regression"
+author: "Darwin Khay"
+date: "10/31/2020"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r}
+asmr <- read.csv("C:\\Users\\khayd\\Documents\\FALL 2020 Files\\STAT 1601\\Datasets\\ASMR_data2.csv")
+library(dplyr)
+
+```
+
+
+# Multiple Linear Regression Model to predict Mood_After_watch
+
+```{r}
+# Building a model to predict the mood after watching
+mood.data <- asmr%>%
+  select(BDI_TOTAL, Mood_Before_watch, Mood_During_Watch, Mood_After_watch, Mood_Daily)
+bdimood.model <- lm(Mood_After_watch~., mood.data)
+summary(bdimood.model)
+
+```
+
+# Using AIC to make a better multiple linear regression model
+
+```{r}
+# Using correlation matrix to see which predictor variables are better
+mood.data%>%
+  cor()
+
+# Using AIC pick out the best predictors
+library(MASS)
+bdimood.model2 <- stepAIC(bdimood.model, direction = "both", trace = F)
+detach("package:MASS")
+summary(bdimood.model2)
+
+```
+# Predicting using the AIC Multilinear regression model
+
+```{r}
+# Creating values to predict in a data frame
+
+newvalues <- data.frame(BDI_TOTAL = c(10,44,23), Mood_During_Watch = c(70,31,63), Mood_Daily = c(65,26,56))
+
+predict(bdimood.model2, newvalues, interval = "predict")
+```
+
+
+# Logistic Regression Model to predict EffectSleep
+
+```{r}
+
+# First subsetting the data to only include the columns of the predictor variables and another one column for the binary response variable
+effectsleep.data <- asmr%>%
+  mutate(EffectSleep2 = ifelse(EffectSleep == "Yes", 1, 0))%>%
+  select(BDI_TOTAL, BAI_TOTAL, Mood_Daily, Mood_Before_watch, Mood_After_watch, Num_ASMRVideos, EffectSleep2)
+
+# Building logistic regression model
+
+logit <- glm(EffectSleep2~. , effectsleep.data, family = "binomial")
+
+
+# Rebuilding logistic regression model to only include the most important variables by using AIC
+library(MASS)
+new.logit <- stepAIC(logit, direction = "both", trace = F)
+summary(new.logit)
+detach("package:MASS")
+
+exp(coef(new.logit))
+# Using new values to predict the outcome of EffectSleep
+
+newvalues2 <- data.frame(BDI_TOTAL = c(15,25,47), BAI_TOTAL = c(6,22,33), Mood_Before_watch = c(85,55,21), Mood_After_watch = c(90,64,29))
+predict(new.logit, newvalues2, type = "response")
+
+
+```
+
