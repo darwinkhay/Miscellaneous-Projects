@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>LoL just FF @ 10</title>
+    <link rel="stylesheet" href="https://unpkg.com/bulmaswatch/darkly/bulmaswatch.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@700&family=Sora:wght@300;400&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="index.css">
+    <h1 class = "gradient-text">League of Legends</h1>
+    <h2>Predict your chances of winning your LoL match just <em><strong style = "color: rgb(108, 153, 250)">10 minutes</strong> </em>into the game :)</h2>
+    <p>
+      Accuracy of this prediction engine is around <strong style = "color:rgb(250, 108, 108)">70%</strong>.
+    </p>
+  </head>
+  <br>
+  <body>
+    <div id = "main">
+      <form>
+        <div class = "inline-div">
+          <input type = "button" onclick = "document.getElementById('item1').innerText = Number(document.getElementById('item1').innerText) + 1;" class = "button is-success" value ="+1" align ="center">
+          <input type=  "button" onclick = "document.getElementById('item1').innerText = Number(document.getElementById('item1').innerText) - 1;" class = "button is-danger" value = "-1" align = "center">
+         <br><br><br>
+          <input type = "button" onclick = "document.getElementById('item3').innerText = Number(document.getElementById('item3').innerText) + 1;" class = "button is-success" value = "+1" align = "center">
+          <input type = "button" onclick = "document.getElementById('item3').innerText = Number(document.getElementById('item3').innerText) -1;"class = "button is-danger" value = "-1" align = "center">
+          <br><br><br>
+          <input type = "button" onclick = "document.getElementById('item5').innerText = Number(document.getElementById('item5').innerText) + 10;" class = "button is-success" value = "+10" align = "center">
+          <input type = "button" onclick = "document.getElementById('item5').innerText = Number(document.getElementById('item5').innerText) - 10;" class = "button is-danger" value = "-10" align = "center">
+          <br><br>
+          <input type = "button" onclick = "document.getElementById('item5').innerText = Number(document.getElementById('item5').innerText) + 1;" class = "button is-success" value = "+1" align = "center">
+          <input type = "button" onclick = "document.getElementById('item5').innerText = Number(document.getElementById('item5').innerText) - 1;" class = "button is-danger" value = "-1" align = "center">
+          <br><br><br>
+         <input type = "button" onclick = "document.getElementById('item7').innerText = (Number(document.getElementById('item7').innerText) + 0.1).toFixed(1);" class = "button is-success" value = "+0.1" align = "center">
+          <input type = "button" class = "button is-danger" onclick = "document.getElementById('item7').innerText = (Number(document.getElementById('item7').innerText) - 0.1).toFixed(1);" value = "-0.1" align = "center">
+        </div>
+         <div class="inline-div">
+             <p align="center">your team's kills</p>
+             <label id = "item1" class="inline-label">0</label>
+             <br><br>
+             <p align="center">your team's dragons</p>
+             <label id = "item3" class="inline-label">0</label>
+             <br><br>
+              <p align="center">your team's total cs</p>
+             <label id = "item5" class="inline-label">0</label>
+             <br><br>
+             <p align="center">enemy team's avg lvl</p>
+             <label id = "item7" class="inline-label">0.0</label>
+         </div>
+         <div class="inline-div">
+             <p align="center">your team's deaths</p>
+             <label id = "item2" class="inline-label">0</label>
+             <br><br>
+              <p align="center">your team's avg lvl</p>
+             <label id = "item4" class="inline-label">0.0</label>
+             <br><br>
+             <p align="center">enemy's dragons</p>
+             <label id = "item6" class="inline-label">0</label>
+             <br><br>
+             <p align="center">enemy team's total cs</p>
+             <label id = "item8" class="inline-label">0</label>
+         </div>
+        <div class = "inline-div">
+          <input type = "button" onclick = "document.getElementById('item2').innerText = Number(document.getElementById('item2').innerText) + 1;" class = "button is-success" value = "+1" align ="center">
+          <input type = "button" onclick = "document.getElementById('item2').innerText = Number(document.getElementById('item2').innerText) - 1;" class = "button is-danger" value = "-1" align = "center">
+          <br><br><br>
+          <input type = "button" onclick = "document.getElementById('item4').innerText = (Number(document.getElementById('item4').innerText) + 0.1).toFixed(1);" class = "button is-success" value = "+0.1" align = "center">
+          <input type = "button" onclick = "document.getElementById('item4').innerText = (Number(document.getElementById('item4').innerText) - 0.1).toFixed(1);"class = "button is-danger" value = "-0.1" align = "center">
+          <br><br><br>
+          <input type = "button" onclick = "document.getElementById('item6').innerText = Number(document.getElementById('item6').innerText) + 1;" class = "button is-success" value = "+1" align = "center">
+          <input type = "button" onclick = "document.getElementById('item6').innerText = Number(document.getElementById('item6').innerText) - 1;" class = "button is-danger" value = "-1" align = "center">
+          <br><br><br>
+         <input type = "button" onclick = "document.getElementById('item8').innerText = Number(document.getElementById('item8').innerText) + 10;" class = "button is-success" value = "+10" align = "center">
+          <input type = "button" onclick = "document.getElementById('item8').innerText = Number(document.getElementById('item8').innerText) - 10;" class = "button is-danger" value = "-10" align = "center">
+          <br><br>
+          <input type = "button" onclick = "document.getElementById('item8').innerText = Number(document.getElementById('item8').innerText) + 1;" class = "button is-success" value = "+1" align = "center">
+          <input type = "button" onclick = "document.getElementById('item8').innerText = Number(document.getElementById('item8').innerText) - 1;" class = "button is-danger" value = "-1" align = "center">
+        </div>
+      <div class = "bottom">
+        <br>
+        <label id = "caption">Your team's chances of winning are: </label>
+        <br>
+        <label id = "percentWin"></label>
+        <br>
+        <label id = "joke"></label>
+        <br>
+        <button type = "submit" id ="predictBtn" class = "button is-primary">Predict</button>
+        <button type = "reset" id = "clearBtn" class = "button is-danger">Clear All</button>
+        <hr>
+        <label id ="author">made by Darwin Khay</label>
+      </div>
+      </form>
+    </div>
+    
+    <script>
+      const form = document.querySelector('form');
+      form.addEventListener('submit', submitForm);
+      function submitForm(e){
+        e.preventDefault();
+        var item1 = document.getElementById("item1").innerText;
+        var item2 = document.getElementById("item2").innerText;
+        var item3 = document.getElementById("item3").innerText;
+        var item4 = document.getElementById("item4").innerText;
+        var item5 = document.getElementById("item5").innerText;
+        var item6 = document.getElementById("item6").innerText;
+        var item7 = document.getElementById("item7").innerText;
+        var item8 = document.getElementById("item8").innerText;
+        var percent = (Math.E**(-1.350392 + 0.164830*Number(item1) - 0.168804*Number(item2)+ 0.362241*Number(item3)+1.141839*Number(item4)+ 0.007845*Number(item5) - 0.262132*Number(item6)- 1.003492*Number(item7) - 0.006069*Number(item8)) / 
+        (1 + Math.E**(-1.350392 + 0.164830*Number(item1) - 0.168804*Number(item2)+ 0.362241*Number(item3)+1.141839*Number(item4)+ 0.007845*Number(item5) - 0.262132*Number(item6)- 1.003492*Number(item7) - 0.006069*Number(item8)))*100).toFixed(3);
+        document.getElementById("percentWin").innerHTML =  percent + "%";
+        if(percent >= 60){
+          document.getElementById("joke").innerHTML = "...your team has a good chance, so don't throw the game 🥰";
+        } else if (percent <= 20){
+          document.getElementById("joke").innerHTML = "...just ff @ 10 🤭";
+        } else if (percent <= 30){
+          document.getElementById("joke").innerHTML = "...not looking really good..yikes";
+        } else if (percent <= 40){
+          document.getElementById("joke").innerHTML = "...maybe you can turn the game around?";
+        } else if (percent < 60) {
+          document.getElementById("joke").innerHTML = "...it's a hit or miss";
+        }
+      }
+      
+      form.addEventListener('reset', clearAll);
+      function clearAll(e){
+        e.preventDefault();
+        document.getElementById("item1").innerText= "0";
+        document.getElementById("item2").innerText= "0";
+        document.getElementById("item3").innerText = "0";
+        document.getElementById("item4").innerText = "0.0";
+        document.getElementById("item5").innerText = "0";
+        document.getElementById("item6").innerText = "0";
+        document.getElementById("item7").innerText = "0.0";
+        document.getElementById("item8").innerText = "0";
+        document.getElementById("percentWin").innerHTML = "";
+        document.getElementById("joke").innerHTML = "";
+      }
+    </script>
+
+  </body>
+</html>
