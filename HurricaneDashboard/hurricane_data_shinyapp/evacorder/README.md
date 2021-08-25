@@ -3,6 +3,7 @@ Information about the Hurricane RShiny Dashboard
 Darwin Khay
 
 ## About the dashboard
+URL: https://darwinkhay.shinyapps.io/evacorder/
 
 This RShiny dashboard shows the hurricane data for a chosen hurricane
 and the mandatory evacuation orders. The hurricane data includes: the
