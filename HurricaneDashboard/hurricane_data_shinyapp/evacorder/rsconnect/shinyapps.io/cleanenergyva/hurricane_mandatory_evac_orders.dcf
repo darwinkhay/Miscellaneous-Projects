@@ -1,0 +1,14 @@
+name: hurricane_mandatory_evac_orders
+title: hurricane_mandatory_evac_orders
+username:
+account: cleanenergyva
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 4463887
+bundleId: 4895933
+url: https://cleanenergyva.shinyapps.io/hurricane_mandatory_evac_orders/
+when: 1628268832.25104
+lastSyncTime: 1628268832.25104
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: mandatory_evac_orders_dorian.png

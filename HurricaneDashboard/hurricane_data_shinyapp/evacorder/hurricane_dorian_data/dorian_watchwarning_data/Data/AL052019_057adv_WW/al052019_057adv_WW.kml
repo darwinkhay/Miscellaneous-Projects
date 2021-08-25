@@ -1,0 +1,913 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<kml xmlns='http://earth.google.com/kml/2.1'>
+<Document>
+<name>Hurricane Dorian (Advisory #57) - Watch/Warnings</name>
+    <description>
+        <TABLE>
+            <TR><TD><B>Title:</B> Tropical Cyclone Watch/Warnings for AL052019 (Advisory #57)</TD></TR>
+            <TR><TD><B>Description:</B>The official watch/warning in KML format is an experimental product produced by the National Hurricane Center.  Coastal areas placed under tropical cyclone watches or warnings are delimited by specific geographical locations known as "breakpoints" (e.g., a hurricane warning is in effect from breakpoint "A" to breakpoint "B").  This file consists of one or more lines connecting the breakpoints delimiting any current watches or warnings. </TD></TR>
+            <TR><TD><B>Date Created:</B> 09-07-2019 - 14:55 UTC </TD></TR>
+            <TR><TD><B>Created:</B> National Hurricane Center </TD></TR>
+            <TR><TD><B>Disclaimer:</B>The official watch/warning in KML format is an experimental product.</TD></TR>
+            <TR><TD><B>For More Information: </B><a href="http://www.nhc.noaa.gov">http://www.nhc.noaa.gov</a></TD></TR>
+        </TABLE>
+    </description>
+        <Style id="TWR">
+                <LineStyle>
+                        <color>ffff0055</color>
+                        <width>3</width>
+                </LineStyle>
+                <PolyStyle>
+                        <color>ffff0055</color>
+                </PolyStyle>
+        </Style>
+        <Style id="TWA">
+                <LineStyle>
+                        <color>ff22e2f7</color>
+                        <width>3</width>
+                </LineStyle>
+                <PolyStyle>
+                        <color>ff22e2f7</color>
+                </PolyStyle>
+        </Style>
+        <Style id="HWA">
+                <LineStyle>
+                        <color>99ffaaff</color>
+                        <width>8</width>
+                </LineStyle>
+                <PolyStyle>
+                        <color>99ffaaff</color>
+                </PolyStyle>
+        </Style>
+        <Style id="HWR">
+                <LineStyle>
+                        <color>990000ff</color>
+                        <width>8</width>
+                </LineStyle>
+                <PolyStyle>
+                        <color>990000ff</color>
+                </PolyStyle>
+        </Style>
+    <Placemark>
+      <name>Hurricane Watch</name>
+        <styleUrl>#HWA</styleUrl>
+        <LineString>
+                <coordinates>
+-57.73,49.98,0 -58.23,49.38,0 -58.63,48.77,0 -59.25,48.48,0 -58.53,48.53,0 -59.4,47.88,0 -59.24,47.62,0 -58.38,47.66,0 
+                </coordinates>
+        </LineString>
+        <ExtendedData>
+            <Data name="timezone">
+                <value>AST</value>
+            </Data>
+            <Data name="stormType">
+                <value>HU</value>
+            </Data>
+            <Data name="advisoryDate">
+                <value>1100 AM AST Sat Sep 07 2019</value>
+            </Data>
+            <Data name="basin">
+                <value>AL</value>
+            </Data>
+            <Data name="fcstpd">
+                <value>120</value>
+            </Data>
+            <Data name="storm">
+                <value>Hurricane Dorian</value>
+            </Data>
+            <Data name="atcfid">
+                <value>AL052019</value>
+            </Data>
+            <Data name="advisoryNum">
+                <value>57</value>
+            </Data>
+            <Data name="stormNum">
+                <value>5</value>
+            </Data>
+            <Data name="stormName">
+                <value>Dorian</value>
+            </Data>
+        </ExtendedData>
+    </Placemark>
+    <Placemark>
+      <name>Hurricane Watch</name>
+        <styleUrl>#HWA</styleUrl>
+        <LineString>
+                <coordinates>
+-62.0,47.22,0 -61.4,47.62,0 
+                </coordinates>
+        </LineString>
+        <ExtendedData>
+            <Data name="timezone">
+                <value>AST</value>
+            </Data>
+            <Data name="stormType">
+                <value>HU</value>
+            </Data>
+            <Data name="advisoryDate">
+                <value>1100 AM AST Sat Sep 07 2019</value>
+            </Data>
+            <Data name="basin">
+                <value>AL</value>
+            </Data>
+            <Data name="fcstpd">
+                <value>120</value>
+            </Data>
+            <Data name="storm">
+                <value>Hurricane Dorian</value>
+            </Data>
+            <Data name="atcfid">
+                <value>AL052019</value>
+            </Data>
+            <Data name="advisoryNum">
+                <value>57</value>
+            </Data>
+            <Data name="stormNum">
+                <value>5</value>
+            </Data>
+            <Data name="stormName">
+                <value>Dorian</value>
+            </Data>
+        </ExtendedData>
+    </Placemark>
+    <Placemark>
+      <name>Hurricane Watch</name>
+        <styleUrl>#HWA</styleUrl>
+        <LineString>
+                <coordinates>
+-63.48,46.22,0 -62.67,45.95,0 -61.97,46.43,0 -62.85,46.42,0 -63.62,46.55,0 -64.0,47.05,0 -64.4,46.65,0 -63.48,46.22,0 
+                </coordinates>
+        </LineString>
+        <ExtendedData>
+            <Data name="timezone">
+                <value>AST</value>
+            </Data>
+            <Data name="stormType">
+                <value>HU</value>
+            </Data>
+            <Data name="advisoryDate">
+                <value>1100 AM AST Sat Sep 07 2019</value>
+            </Data>
+            <Data name="basin">
+                <value>AL</value>
+            </Data>
+            <Data name="fcstpd">
+                <value>120</value>
+            </Data>
+            <Data name="storm">
+                <value>Hurricane Dorian</value>
+            </Data>
+            <Data name="atcfid">
+                <value>AL052019</value>
+            </Data>
+            <Data name="advisoryNum">
+                <value>57</value>
+            </Data>
+            <Data name="stormNum">
+                <value>5</value>
+            </Data>
+            <Data name="stormName">
+                <value>Dorian</value>
+            </Data>
+        </ExtendedData>
+    </Placemark>
+    <Placemark>
+      <name>Tropical Storm Warning</name>
+        <styleUrl>#TWR</styleUrl>
+        <LineString>
+                <coordinates>
+-63.48,46.22,0 -62.67,45.95,0 -61.97,46.43,0 -62.85,46.42,0 -63.62,46.55,0 -64.0,47.05,0 -64.4,46.65,0 -63.48,46.22,0 
+                </coordinates>
+        </LineString>
+        <ExtendedData>
+            <Data name="timezone">
+                <value>AST</value>
+            </Data>
+            <Data name="stormType">
+                <value>HU</value>
+            </Data>
+            <Data name="advisoryDate">
+                <value>1100 AM AST Sat Sep 07 2019</value>
+            </Data>
+            <Data name="basin">
+                <value>AL</value>
+            </Data>
+            <Data name="fcstpd">
+                <value>120</value>
+            </Data>
+            <Data name="storm">
+                <value>Hurricane Dorian</value>
+            </Data>
+            <Data name="atcfid">
+                <value>AL052019</value>
+            </Data>
+            <Data name="advisoryNum">
+                <value>57</value>
+            </Data>
+            <Data name="stormNum">
+                <value>5</value>
+            </Data>
+            <Data name="stormName">
+                <value>Dorian</value>
+            </Data>
+        </ExtendedData>
+    </Placemark>
+    <Placemark>
+      <name>Tropical Storm Warning</name>
+        <styleUrl>#TWR</styleUrl>
+        <LineString>
+                <coordinates>
+-68.22,44.48,0 -67.05,44.92,0 
+                </coordinates>
+        </LineString>
+        <ExtendedData>
+            <Data name="timezone">
+                <value>AST</value>
+            </Data>
+            <Data name="stormType">
+                <value>HU</value>
+            </Data>
+            <Data name="advisoryDate">
+                <value>1100 AM AST Sat Sep 07 2019</value>
+            </Data>
+            <Data name="basin">
+                <value>AL</value>
+            </Data>
+            <Data name="fcstpd">
+                <value>120</value>
+            </Data>
+            <Data name="storm">
+                <value>Hurricane Dorian</value>
+            </Data>
+            <Data name="atcfid">
+                <value>AL052019</value>
+            </Data>
+            <Data name="advisoryNum">
+                <value>57</value>
+            </Data>
+            <Data name="stormNum">
+                <value>5</value>
+            </Data>
+            <Data name="stormName">
+                <value>Dorian</value>
+            </Data>
+        </ExtendedData>
+    </Placemark>
+    <Placemark>
+      <name>Tropical Storm Warning</name>
+        <styleUrl>#TWR</styleUrl>
+        <LineString>
+                <coordinates>
+-64.22,45.12,0 -65.03,45.07,0 -65.76,44.67,0 -66.15,43.97,0 -65.77,43.6,0 
+                </coordinates>
+        </LineString>
+        <ExtendedData>
+            <Data name="timezone">
+                <value>AST</value>
+            </Data>
+            <Data name="stormType">
+                <value>HU</value>
+            </Data>
+            <Data name="advisoryDate">
+                <value>1100 AM AST Sat Sep 07 2019</value>
+            </Data>
+            <Data name="basin">
+                <value>AL</value>
+            </Data>
+            <Data name="fcstpd">
+                <value>120</value>
+            </Data>
+            <Data name="storm">
+                <value>Hurricane Dorian</value>
+            </Data>
+            <Data name="atcfid">
+                <value>AL052019</value>
+            </Data>
+            <Data name="advisoryNum">
+                <value>57</value>
+            </Data>
+            <Data name="stormNum">
+                <value>5</value>
+            </Data>
+            <Data name="stormName">
+                <value>Dorian</value>
+            </Data>
+        </ExtendedData>
+    </Placemark>
+    <Placemark>
+      <name>Tropical Storm Warning</name>
+        <styleUrl>#TWR</styleUrl>
+        <LineString>
+                <coordinates>
+-65.01,45.57,0 -64.27,45.82,0 -64.93,45.33,0 -64.09,45.4,0 -63.39,45.36,0 -64.22,45.12,0 -65.03,45.07,0 -65.76,44.67,0 -66.15,43.97,0 -65.77,43.6,0 -64.9,43.83,0 -64.55,44.13,0 -64.07,44.62,0 -63.55,44.58,0 -63.22,44.68,0 -62.17,44.97,0 -60.97,45.33,0 -61.35,45.58,0 -60.27,45.72,0 -59.85,46.0,0 -60.32,46.32,0 -60.53,47.0,0 -61.48,46.1,0 -61.43,45.63,0 -61.93,45.87,0 -62.23,45.7,0 -63.13,45.73,0 -63.38,45.75,0 -64.03,46.0,0 -64.53,46.26,0 
+                </coordinates>
+        </LineString>
+        <ExtendedData>
+            <Data name="timezone">
+                <value>AST</value>
+            </Data>
+            <Data name="stormType">
+                <value>HU</value>
+            </Data>
+            <Data name="advisoryDate">
+                <value>1100 AM AST Sat Sep 07 2019</value>
+            </Data>
+            <Data name="basin">
+                <value>AL</value>
+            </Data>
+            <Data name="fcstpd">
+                <value>120</value>
+            </Data>
+            <Data name="storm">
+                <value>Hurricane Dorian</value>
+            </Data>
+            <Data name="atcfid">
+                <value>AL052019</value>
+            </Data>
+            <Data name="advisoryNum">
+                <value>57</value>
+            </Data>
+            <Data name="stormNum">
+                <value>5</value>
+            </Data>
+            <Data name="stormName">
+                <value>Dorian</value>
+            </Data>
+        </ExtendedData>
+    </Placemark>
+    <Placemark>
+      <name>Tropical Storm Warning</name>
+        <styleUrl>#TWR</styleUrl>
+        <LineString>
+                <coordinates>
+-58.38,47.66,0 -56.72,47.58,0 -55.13,47.6,0 
+                </coordinates>
+        </LineString>
+        <ExtendedData>
+            <Data name="timezone">
+                <value>AST</value>
+            </Data>
+            <Data name="stormType">
+                <value>HU</value>
+            </Data>
+            <Data name="advisoryDate">
+                <value>1100 AM AST Sat Sep 07 2019</value>
+            </Data>
+            <Data name="basin">
+                <value>AL</value>
+            </Data>
+            <Data name="fcstpd">
+                <value>120</value>
+            </Data>
+            <Data name="storm">
+                <value>Hurricane Dorian</value>
+            </Data>
+            <Data name="atcfid">
+                <value>AL052019</value>
+            </Data>
+            <Data name="advisoryNum">
+                <value>57</value>
+            </Data>
+            <Data name="stormNum">
+                <value>5</value>
+            </Data>
+            <Data name="stormName">
+                <value>Dorian</value>
+            </Data>
+        </ExtendedData>
+    </Placemark>
+    <Placemark>
+      <name>Tropical Storm Warning</name>
+        <styleUrl>#TWR</styleUrl>
+        <LineString>
+                <coordinates>
+-57.18,51.45,0 -56.72,51.32,0 -57.38,50.58,0 
+                </coordinates>
+        </LineString>
+        <ExtendedData>
+            <Data name="timezone">
+                <value>AST</value>
+            </Data>
+            <Data name="stormType">
+                <value>HU</value>
+            </Data>
+            <Data name="advisoryDate">
+                <value>1100 AM AST Sat Sep 07 2019</value>
+            </Data>
+            <Data name="basin">
+                <value>AL</value>
+            </Data>
+            <Data name="fcstpd">
+                <value>120</value>
+            </Data>
+            <Data name="storm">
+                <value>Hurricane Dorian</value>
+            </Data>
+            <Data name="atcfid">
+                <value>AL052019</value>
+            </Data>
+            <Data name="advisoryNum">
+                <value>57</value>
+            </Data>
+            <Data name="stormNum">
+                <value>5</value>
+            </Data>
+            <Data name="stormName">
+                <value>Dorian</value>
+            </Data>
+        </ExtendedData>
+    </Placemark>
+    <Placemark>
+      <name>Tropical Storm Warning</name>
+        <styleUrl>#TWR</styleUrl>
+        <LineString>
+                <coordinates>
+-55.95,51.58,0 
+                </coordinates>
+        </LineString>
+        <ExtendedData>
+            <Data name="timezone">
+                <value>AST</value>
+            </Data>
+            <Data name="stormType">
+                <value>HU</value>
+            </Data>
+            <Data name="advisoryDate">
+                <value>1100 AM AST Sat Sep 07 2019</value>
+            </Data>
+            <Data name="basin">
+                <value>AL</value>
+            </Data>
+            <Data name="fcstpd">
+                <value>120</value>
+            </Data>
+            <Data name="storm">
+                <value>Hurricane Dorian</value>
+            </Data>
+            <Data name="atcfid">
+                <value>AL052019</value>
+            </Data>
+            <Data name="advisoryNum">
+                <value>57</value>
+            </Data>
+            <Data name="stormNum">
+                <value>5</value>
+            </Data>
+            <Data name="stormName">
+                <value>Dorian</value>
+            </Data>
+        </ExtendedData>
+    </Placemark>
+    <Placemark>
+      <name>Tropical Storm Warning</name>
+        <styleUrl>#TWR</styleUrl>
+        <LineString>
+                <coordinates>
+-55.95,51.58,0 
+                </coordinates>
+        </LineString>
+        <ExtendedData>
+            <Data name="timezone">
+                <value>AST</value>
+            </Data>
+            <Data name="stormType">
+                <value>HU</value>
+            </Data>
+            <Data name="advisoryDate">
+                <value>1100 AM AST Sat Sep 07 2019</value>
+            </Data>
+            <Data name="basin">
+                <value>AL</value>
+            </Data>
+            <Data name="fcstpd">
+                <value>120</value>
+            </Data>
+            <Data name="storm">
+                <value>Hurricane Dorian</value>
+            </Data>
+            <Data name="atcfid">
+                <value>AL052019</value>
+            </Data>
+            <Data name="advisoryNum">
+                <value>57</value>
+            </Data>
+            <Data name="stormNum">
+                <value>5</value>
+            </Data>
+            <Data name="stormName">
+                <value>Dorian</value>
+            </Data>
+        </ExtendedData>
+    </Placemark>
+    <Placemark>
+      <name>Tropical Storm Warning</name>
+        <styleUrl>#TWR</styleUrl>
+        <LineString>
+                <coordinates>
+-54.2,49.63,0 -55.65,49.42,0 
+                </coordinates>
+        </LineString>
+        <ExtendedData>
+            <Data name="timezone">
+                <value>AST</value>
+            </Data>
+            <Data name="stormType">
+                <value>HU</value>
+            </Data>
+            <Data name="advisoryDate">
+                <value>1100 AM AST Sat Sep 07 2019</value>
+            </Data>
+            <Data name="basin">
+                <value>AL</value>
+            </Data>
+            <Data name="fcstpd">
+                <value>120</value>
+            </Data>
+            <Data name="storm">
+                <value>Hurricane Dorian</value>
+            </Data>
+            <Data name="atcfid">
+                <value>AL052019</value>
+            </Data>
+            <Data name="advisoryNum">
+                <value>57</value>
+            </Data>
+            <Data name="stormNum">
+                <value>5</value>
+            </Data>
+            <Data name="stormName">
+                <value>Dorian</value>
+            </Data>
+        </ExtendedData>
+    </Placemark>
+    <Placemark>
+      <name>Tropical Storm Warning</name>
+        <styleUrl>#TWR</styleUrl>
+        <LineString>
+                <coordinates>
+-55.65,49.42,0 
+                </coordinates>
+        </LineString>
+        <ExtendedData>
+            <Data name="timezone">
+                <value>AST</value>
+            </Data>
+            <Data name="stormType">
+                <value>HU</value>
+            </Data>
+            <Data name="advisoryDate">
+                <value>1100 AM AST Sat Sep 07 2019</value>
+            </Data>
+            <Data name="basin">
+                <value>AL</value>
+            </Data>
+            <Data name="fcstpd">
+                <value>120</value>
+            </Data>
+            <Data name="storm">
+                <value>Hurricane Dorian</value>
+            </Data>
+            <Data name="atcfid">
+                <value>AL052019</value>
+            </Data>
+            <Data name="advisoryNum">
+                <value>57</value>
+            </Data>
+            <Data name="stormNum">
+                <value>5</value>
+            </Data>
+            <Data name="stormName">
+                <value>Dorian</value>
+            </Data>
+        </ExtendedData>
+    </Placemark>
+    <Placemark>
+      <name>Tropical Storm Warning</name>
+        <styleUrl>#TWR</styleUrl>
+        <LineString>
+                <coordinates>
+-56.53,50.23,0 -55.43,51.55,0 -55.95,51.58,0 
+                </coordinates>
+        </LineString>
+        <ExtendedData>
+            <Data name="timezone">
+                <value>AST</value>
+            </Data>
+            <Data name="stormType">
+                <value>HU</value>
+            </Data>
+            <Data name="advisoryDate">
+                <value>1100 AM AST Sat Sep 07 2019</value>
+            </Data>
+            <Data name="basin">
+                <value>AL</value>
+            </Data>
+            <Data name="fcstpd">
+                <value>120</value>
+            </Data>
+            <Data name="storm">
+                <value>Hurricane Dorian</value>
+            </Data>
+            <Data name="atcfid">
+                <value>AL052019</value>
+            </Data>
+            <Data name="advisoryNum">
+                <value>57</value>
+            </Data>
+            <Data name="stormNum">
+                <value>5</value>
+            </Data>
+            <Data name="stormName">
+                <value>Dorian</value>
+            </Data>
+        </ExtendedData>
+    </Placemark>
+    <Placemark>
+      <name>Tropical Storm Warning</name>
+        <styleUrl>#TWR</styleUrl>
+        <LineString>
+                <coordinates>
+-55.65,49.42,0 -56.05,49.7,0 -55.6,49.95,0 -56.17,50.15,0 -56.82,49.58,0 -56.53,50.23,0 
+                </coordinates>
+        </LineString>
+        <ExtendedData>
+            <Data name="timezone">
+                <value>AST</value>
+            </Data>
+            <Data name="stormType">
+                <value>HU</value>
+            </Data>
+            <Data name="advisoryDate">
+                <value>1100 AM AST Sat Sep 07 2019</value>
+            </Data>
+            <Data name="basin">
+                <value>AL</value>
+            </Data>
+            <Data name="fcstpd">
+                <value>120</value>
+            </Data>
+            <Data name="storm">
+                <value>Hurricane Dorian</value>
+            </Data>
+            <Data name="atcfid">
+                <value>AL052019</value>
+            </Data>
+            <Data name="advisoryNum">
+                <value>57</value>
+            </Data>
+            <Data name="stormNum">
+                <value>5</value>
+            </Data>
+            <Data name="stormName">
+                <value>Dorian</value>
+            </Data>
+        </ExtendedData>
+    </Placemark>
+    <Placemark>
+      <name>Tropical Storm Warning</name>
+        <styleUrl>#TWR</styleUrl>
+        <LineString>
+                <coordinates>
+-59.0,50.87,0 -57.18,51.45,0 
+                </coordinates>
+        </LineString>
+        <ExtendedData>
+            <Data name="timezone">
+                <value>AST</value>
+            </Data>
+            <Data name="stormType">
+                <value>HU</value>
+            </Data>
+            <Data name="advisoryDate">
+                <value>1100 AM AST Sat Sep 07 2019</value>
+            </Data>
+            <Data name="basin">
+                <value>AL</value>
+            </Data>
+            <Data name="fcstpd">
+                <value>120</value>
+            </Data>
+            <Data name="storm">
+                <value>Hurricane Dorian</value>
+            </Data>
+            <Data name="atcfid">
+                <value>AL052019</value>
+            </Data>
+            <Data name="advisoryNum">
+                <value>57</value>
+            </Data>
+            <Data name="stormNum">
+                <value>5</value>
+            </Data>
+            <Data name="stormName">
+                <value>Dorian</value>
+            </Data>
+        </ExtendedData>
+    </Placemark>
+    <Placemark>
+      <name>Tropical Storm Warning</name>
+        <styleUrl>#TWR</styleUrl>
+        <LineString>
+                <coordinates>
+-55.95,51.58,0 -55.83,52.28,0 
+                </coordinates>
+        </LineString>
+        <ExtendedData>
+            <Data name="timezone">
+                <value>AST</value>
+            </Data>
+            <Data name="stormType">
+                <value>HU</value>
+            </Data>
+            <Data name="advisoryDate">
+                <value>1100 AM AST Sat Sep 07 2019</value>
+            </Data>
+            <Data name="basin">
+                <value>AL</value>
+            </Data>
+            <Data name="fcstpd">
+                <value>120</value>
+            </Data>
+            <Data name="storm">
+                <value>Hurricane Dorian</value>
+            </Data>
+            <Data name="atcfid">
+                <value>AL052019</value>
+            </Data>
+            <Data name="advisoryNum">
+                <value>57</value>
+            </Data>
+            <Data name="stormNum">
+                <value>5</value>
+            </Data>
+            <Data name="stormName">
+                <value>Dorian</value>
+            </Data>
+        </ExtendedData>
+    </Placemark>
+    <Placemark>
+      <name>Tropical Storm Warning</name>
+        <styleUrl>#TWR</styleUrl>
+        <LineString>
+                <coordinates>
+-62.0,47.22,0 -61.4,47.62,0 
+                </coordinates>
+        </LineString>
+        <ExtendedData>
+            <Data name="timezone">
+                <value>AST</value>
+            </Data>
+            <Data name="stormType">
+                <value>HU</value>
+            </Data>
+            <Data name="advisoryDate">
+                <value>1100 AM AST Sat Sep 07 2019</value>
+            </Data>
+            <Data name="basin">
+                <value>AL</value>
+            </Data>
+            <Data name="fcstpd">
+                <value>120</value>
+            </Data>
+            <Data name="storm">
+                <value>Hurricane Dorian</value>
+            </Data>
+            <Data name="atcfid">
+                <value>AL052019</value>
+            </Data>
+            <Data name="advisoryNum">
+                <value>57</value>
+            </Data>
+            <Data name="stormNum">
+                <value>5</value>
+            </Data>
+            <Data name="stormName">
+                <value>Dorian</value>
+            </Data>
+        </ExtendedData>
+    </Placemark>
+    <Placemark>
+      <name>Hurricane Warning</name>
+        <styleUrl>#HWR</styleUrl>
+        <LineString>
+                <coordinates>
+-65.77,43.6,0 -64.9,43.83,0 -64.55,44.13,0 -64.07,44.62,0 -63.55,44.58,0 -63.22,44.68,0 -62.17,44.97,0 -60.97,45.33,0 -61.35,45.58,0 -60.27,45.72,0 -59.85,46.0,0 -60.32,46.32,0 -60.53,47.0,0 -61.48,46.1,0 -61.43,45.63,0 -61.93,45.87,0 -62.23,45.7,0 -63.13,45.73,0 
+                </coordinates>
+        </LineString>
+        <ExtendedData>
+            <Data name="timezone">
+                <value>AST</value>
+            </Data>
+            <Data name="stormType">
+                <value>HU</value>
+            </Data>
+            <Data name="advisoryDate">
+                <value>1100 AM AST Sat Sep 07 2019</value>
+            </Data>
+            <Data name="basin">
+                <value>AL</value>
+            </Data>
+            <Data name="fcstpd">
+                <value>120</value>
+            </Data>
+            <Data name="storm">
+                <value>Hurricane Dorian</value>
+            </Data>
+            <Data name="atcfid">
+                <value>AL052019</value>
+            </Data>
+            <Data name="advisoryNum">
+                <value>57</value>
+            </Data>
+            <Data name="stormNum">
+                <value>5</value>
+            </Data>
+            <Data name="stormName">
+                <value>Dorian</value>
+            </Data>
+        </ExtendedData>
+    </Placemark>
+    <Placemark>
+      <name>Hurricane Warning</name>
+        <styleUrl>#HWR</styleUrl>
+        <LineString>
+                <coordinates>
+-57.73,49.98,0 -58.23,49.38,0 -58.63,48.77,0 -59.25,48.48,0 -58.53,48.53,0 -59.4,47.88,0 -59.24,47.62,0 -58.38,47.66,0 
+                </coordinates>
+        </LineString>
+        <ExtendedData>
+            <Data name="timezone">
+                <value>AST</value>
+            </Data>
+            <Data name="stormType">
+                <value>HU</value>
+            </Data>
+            <Data name="advisoryDate">
+                <value>1100 AM AST Sat Sep 07 2019</value>
+            </Data>
+            <Data name="basin">
+                <value>AL</value>
+            </Data>
+            <Data name="fcstpd">
+                <value>120</value>
+            </Data>
+            <Data name="storm">
+                <value>Hurricane Dorian</value>
+            </Data>
+            <Data name="atcfid">
+                <value>AL052019</value>
+            </Data>
+            <Data name="advisoryNum">
+                <value>57</value>
+            </Data>
+            <Data name="stormNum">
+                <value>5</value>
+            </Data>
+            <Data name="stormName">
+                <value>Dorian</value>
+            </Data>
+        </ExtendedData>
+    </Placemark>
+    <Placemark>
+      <name>Hurricane Warning</name>
+        <styleUrl>#HWR</styleUrl>
+        <LineString>
+                <coordinates>
+-57.38,50.58,0 -57.73,49.98,0 
+                </coordinates>
+        </LineString>
+        <ExtendedData>
+            <Data name="timezone">
+                <value>AST</value>
+            </Data>
+            <Data name="stormType">
+                <value>HU</value>
+            </Data>
+            <Data name="advisoryDate">
+                <value>1100 AM AST Sat Sep 07 2019</value>
+            </Data>
+            <Data name="basin">
+                <value>AL</value>
+            </Data>
+            <Data name="fcstpd">
+                <value>120</value>
+            </Data>
+            <Data name="storm">
+                <value>Hurricane Dorian</value>
+            </Data>
+            <Data name="atcfid">
+                <value>AL052019</value>
+            </Data>
+            <Data name="advisoryNum">
+                <value>57</value>
+            </Data>
+            <Data name="stormNum">
+                <value>5</value>
+            </Data>
+            <Data name="stormName">
+                <value>Dorian</value>
+            </Data>
+        </ExtendedData>
+    </Placemark>
+</Document>
+</kml>

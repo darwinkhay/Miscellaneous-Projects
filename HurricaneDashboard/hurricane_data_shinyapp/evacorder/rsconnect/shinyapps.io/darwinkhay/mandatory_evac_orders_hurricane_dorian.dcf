@@ -1,0 +1,14 @@
+name: mandatory_evac_orders_hurricane_dorian
+title: mandatory_evac_orders_hurricane_dorian
+username:
+account: darwinkhay
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 4402203
+bundleId: 4895784
+url: https://darwinkhay.shinyapps.io/mandatory_evac_orders_hurricane_dorian/
+when: 1628266591.12345
+lastSyncTime: 1628266591.12345
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: mandatory_evac_orders_dorian.png
